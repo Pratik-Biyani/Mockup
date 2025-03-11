@@ -10,9 +10,9 @@ const AmbassadorsSection = () => {
       name: 'Michael Jordan',
       role: 'Basketball Legend',
       images: [
-        'https://via.placeholder.com/800x600?text=Michael+Jordan+1',
-        'https://via.placeholder.com/800x600?text=Michael+Jordan+2',
-        'https://via.placeholder.com/800x600?text=Michael+Jordan+3',
+        'https://media.cnn.com/api/v1/images/stellar/prod/160204101907-nba-slam-dunk-5.jpg?q=w_4725,h_2658,x_0,y_0,c_fill',
+        'https://cdn.nba.com/manage/2021/08/michael-jordan-looks.jpg',
+        'https://media.cnn.com/api/v1/images/stellar/prod/210616193554-01-michael-jordan-athlete-activism.jpg?q=w_3000,h_1688,x_0,y_0,c_fill'
       ],
     },
     {
@@ -20,9 +20,10 @@ const AmbassadorsSection = () => {
       name: 'Serena Williams',
       role: 'Tennis Champion',
       images: [
-        'https://via.placeholder.com/800x600?text=Serena+Williams+1',
-        'https://via.placeholder.com/800x600?text=Serena+Williams+2',
-        'https://via.placeholder.com/800x600?text=Serena+Williams+3',
+        'https://cdn.britannica.com/29/234629-138-ADD4F54E/who-is-Serena-Williams.jpg?w=800&h=450&c=crop',
+       'https://media.vanityfair.com/photos/5c3f502b3889055ec05706c9/master/pass/serena-williams-dedicates-win-to-moms.jpg',
+       'https://img.olympics.com/images/image/private/t_s_pog_staticContent_hero_xl_2x/f_auto/primary/a6x0ji4qk4hvvykcq7pv',
+
       ],
     },
     {
@@ -30,19 +31,9 @@ const AmbassadorsSection = () => {
       name: 'LeBron James',
       role: 'NBA Superstar',
       images: [
-        'https://via.placeholder.com/800x600?text=LeBron+James+1',
-        'https://via.placeholder.com/800x600?text=LeBron+James+2',
-        'https://via.placeholder.com/800x600?text=LeBron+James+3',
-      ],
-    },
-    {
-      id: 4,
-      name: 'Naomi Osaka',
-      role: 'Tennis Prodigy',
-      images: [
-        'https://via.placeholder.com/800x600?text=Naomi+Osaka+1',
-        'https://via.placeholder.com/800x600?text=Naomi+Osaka+2',
-        'https://via.placeholder.com/800x600?text=Naomi+Osaka+3',
+        'https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/4A31/production/_101539981_lebronjames.jpg',
+        'https://i.abcnewsfe.com/a/3a967284-39d2-480a-8698-8c8ffb92de31/lebron-james-02-gty-jef-231221_1703177508225_hpEmbed_3x2.jpg',
+        'https://cdn.nba.com/teams/uploads/sites/1610612747/2025/02/2425_lal_highlight_thumb_250212_james_2000.jpg',
       ],
     },
   ];

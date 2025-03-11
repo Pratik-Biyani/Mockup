@@ -8,13 +8,13 @@ const TestimonialsSection = () => {
       id: 1,
       text: '"The comfort and performance of these shoes are unmatched! I wear them for every game."',
       user: {
-        name: 'John Doe',
+        name: 'Lionel Messi',
         role: 'Professional Athlete',
-        avatar: 'https://via.placeholder.com/100x100?text=User+1',
+        avatar: 'https://www.themodestman.com/wp-content/uploads/2018/06/Famous-Short-Male-Athletes.jpg',
       },
       product: {
         name: 'Air Jordan 1 Retro High',
-        image: 'https://via.placeholder.com/400x400?text=Air+Jordan+1',
+        image: 'https://i5.walmartimages.com/asr/352e1dd1-eedf-4117-ad94-5fa9ea9590b9.97d1d0344cd0f2a0b3efd7719673bef4.jpeg',
         price: '$180',
       },
     },
@@ -24,11 +24,11 @@ const TestimonialsSection = () => {
       user: {
         name: 'Jane Smith',
         role: 'Fitness Enthusiast',
-        avatar: 'https://via.placeholder.com/100x100?text=User+2',
+        avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMYR0TAT4xCZgg-7cvDs2gH02sMGHAIbFDYQ&s2',
       },
       product: {
         name: 'Air Jordan 4 Retro',
-        image: 'https://via.placeholder.com/400x400?text=Air+Jordan+4',
+        image: 'https://crepdogcrew.com/cdn/shop/products/AJ4white-MidnightNavy.jpg?v=1740764523&width=1500',
         price: '$200',
       },
     },
@@ -38,11 +38,11 @@ const TestimonialsSection = () => {
       user: {
         name: 'Mike Johnson',
         role: 'Basketball Player',
-        avatar: 'https://via.placeholder.com/100x100?text=User+3',
+        avatar: 'https://imageio.forbes.com/specials-images/imageserve/6531830aaae52b9426047849/1x1-social-LeBron-James-by-Harry-How-Getty-Images/0x0.jpg?format=jpg&height=1080&width=1459',
       },
       product: {
         name: 'Air Jordan 11 Retro',
-        image: 'https://via.placeholder.com/400x400?text=Air+Jordan+11',
+        image: 'https://static.nike.com/a/images/w_1280,q_auto,f_auto/25a25a8d-c3cb-4d14-bbc6-c46612877326/air-jordan-11-blackred-release-date.jpg',
         price: '$220',
       },
     },

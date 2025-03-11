@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import nike from '../../assets/nike.mp4';
-import nike2 from '../../assets/nike2.mp4';
+import nikeVideo from '../../assets/nike.mp4'; // Adjust the path to your video file
 
 const VideoSection = () => {
   return (
@@ -11,18 +10,18 @@ const VideoSection = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      {/* Video Player */}
+      {/* Video Background */}
       <div className="absolute inset-0 w-full h-full">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline // Required for autoplay on mobile devices
-          className="w-full h-full object-cover"
-          src={nike2}
-          type="video/mp4"
-        >
-          <source src={nike2} type="video/mp4" />
+      <video
+        autoPlay
+        muted
+        defaultMuted
+        loop
+        playsInline
+        className="w-full h-full object-cover"
+>
+
+          <source src={nikeVideo} type="nike/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
