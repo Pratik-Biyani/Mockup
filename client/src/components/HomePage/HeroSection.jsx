@@ -8,13 +8,17 @@ import bg1 from '../../assets/Shoes/Kids/img1.png';
 import bg2 from '../../assets/Shoes/Kids/img2.png';
 import bg3 from '../../assets/Shoes/Kids/img3.png';
 import bg4 from '../../assets/Shoes/Kids/img4.png';
+import bg5 from '../../assets/Shoes/Kids/img5.png';
+import bg6 from '../../assets/Shoes/Kids/img6.png';
+import bg7 from '../../assets/Shoes/Kids/img7.png';
+
 
 const HeroSection = ({ sentences }) => {
   const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
   const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(0);
 
   // Background images array
-  const backgroundImages = [bg1, bg2, bg3, bg4];
+  const backgroundImages = [bg1, bg2, bg3, bg4, bg5, bg6, bg7];
 
   // Change background every 5 seconds
   useEffect(() => {
@@ -28,7 +32,7 @@ const HeroSection = ({ sentences }) => {
   useEffect(() => {
     const sentenceInterval = setInterval(() => {
       setCurrentSentenceIndex(prevIndex => (prevIndex + 1) % sentences.length);
-    }, 3000);
+    }, 5000);
     return () => clearInterval(sentenceInterval);
   }, [sentences.length]);
 

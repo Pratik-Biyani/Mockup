@@ -15,13 +15,12 @@ const VideoSection = () => {
       <video
         autoPlay
         muted
-        defaultMuted
         loop
         playsInline
         className="w-full h-full object-cover"
 >
 
-          <source src={nikeVideo} type="nike/mp4" />
+          <source src="https://youtu.be/X0xbNUMZCvk?si=szy_foFY-oFzAHsf" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
