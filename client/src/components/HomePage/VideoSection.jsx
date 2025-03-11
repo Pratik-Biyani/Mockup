@@ -1,32 +1,31 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import nikeVideo from '../../assets/nike.mp4'; // Adjust the path to your video file
+import nike1 from '../../assets/nike.mp4'; // Adjust the path to your GIF file
 
 const VideoSection = () => {
   return (
     <motion.section
-      className="relative w-screen h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white overflow-hidden"
+      className="relative w-screen h-screen  text-white overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      {/* Video Background */}
-      <div className="absolute inset-0 w-full h-full">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="w-full h-full object-cover"
->
-
-          <source src="https://youtu.be/X0xbNUMZCvk?si=szy_foFY-oFzAHsf" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+      
+    <video
+      autoPlay
+      muted
+      loop
+      playsInline // Required for autoplay on mobile devices
+      className="w-full h-full object-cover"
+      src={nike1}
+      type="video/mp4"
+    >
+      <source src={nike1} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
 
       {/* Content Overlay */}
-      <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50">
+      <div className="absolute inset-0 flex flex-col justify-center items-center bg-opacity-50">
         <motion.h2
           className="text-4xl md:text-6xl font-bold mb-6 text-center"
           initial={{ y: 20, opacity: 0 }}

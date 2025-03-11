@@ -62,7 +62,7 @@ const AmbassadorsSection = () => {
 
   return (
     <motion.section
-      className="py-20 w-screen bg-white text-black overflow-hidden"
+      className="py-20 w-screen bg-white text-black overflow-hidden w-full"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
@@ -86,11 +86,11 @@ const AmbassadorsSection = () => {
         </motion.p>
 
         {/* Ambassador Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-8 ml-50">
           {ambassadors.map((ambassador, index) => (
             <motion.div
               key={ambassador.id}
-              className={`p-4 rounded-lg cursor-pointer transition-all duration-300 ${
+              className={`p-4 px-5 rounded-lg cursor-pointer transition-all duration-300 ${
                 currentAmbassador === index
                   ? 'bg-black text-white shadow-lg'
                   : 'bg-white text-black border border-black hover:bg-gray-100'

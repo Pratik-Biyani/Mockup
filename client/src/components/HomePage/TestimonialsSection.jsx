@@ -60,7 +60,7 @@ const TestimonialsSection = () => {
   }, [testimonials.length]);
 
   return (
-    <section className="py-16 w-screen bg-gradient-to-b from-gray-50 to-gray-100 text-center">
+    <section className="py-16 w-screen bg-white text-center">
       <h2 className="text-4xl font-bold mb-4 text-gray-900">What Our Customers Say</h2>
       <p className="text-gray-600 max-w-2xl mx-auto mb-12 text-lg">
         Hear from those who wear the iconic Jordan sneakers every day. Their stories will inspire you to elevate your game.
