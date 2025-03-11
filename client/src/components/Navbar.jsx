@@ -67,7 +67,7 @@ const Navbar = () => {
           <motion.img
             src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg"
             alt="Nike Logo"
-            className="h-8 w-8"
+            className="h-10 w-10"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           />

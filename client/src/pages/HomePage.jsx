@@ -14,6 +14,7 @@ import GIF from '../components/HomePage/GIF';
 import jordangif from '../assets/GIF/jordan.gif';
 import ProductSection from '../components/HomePage/productsection';
 import VideoSection1 from '../components/HomePage/VideoSection1';
+import ChatBot from '../components/Chatbot';
 
 
 
@@ -35,6 +36,7 @@ const HomePage = () => {
 
   return (
     <>
+    <ChatBot/>
     <GIF gifSrc={jordangif} />
       <div className={`min-h-screen ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
       <Navbar />
