@@ -113,7 +113,7 @@ const AmbassadorsSection = () => {
         {/* Ambassador Slideshow */}
         <div className="relative w-full max-w-9xl ">
           {/* Image Slideshow */}
-          <div className="w-full h-[500px] overflow-hidden rounded-lg relative">
+          <div className="w-full h-[650px] overflow-hidden rounded-lg relative">
             <AnimatePresence mode="wait">
               <motion.img
                 key={currentImageIndex}

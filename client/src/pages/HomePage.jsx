@@ -13,6 +13,8 @@ import { motion } from 'framer-motion'; // Import Framer Motion
 import GIF from '../components/HomePage/GIF';
 import jordangif from '../assets/GIF/jordan.gif';
 import ProductSection from '../components/HomePage/productsection';
+import VideoSection1 from '../components/HomePage/VideoSection1';
+
 
 
 
@@ -85,6 +87,15 @@ const HomePage = () => {
           variants={slideInVariants}
         >
           <AmbassadorsSection />
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={slideInVariants}
+        >
+          <VideoSection1 />
         </motion.div>
 
         {/* Testimonials Section */}

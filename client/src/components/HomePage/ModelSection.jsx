@@ -64,6 +64,25 @@ const ModelSection = () => {
             <p className="text-gray-500 mt-2">Explore this sneaker in 3D.</p>
           </motion.div>
 
+
+          {/* 3D Model 3 */}
+          <motion.div
+            className="card bg-white p-6 shadow-lg rounded-xl hover:shadow-2xl transition-all duration-300 border border-gray-200"
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            whileHover={{ scale: 1.02 }}
+          >
+            <iframe
+              src="https://my.spline.design/jacketprototype-f3370f3c62cb0256638153ff71b57ebd/"
+              title="Spline 3D Model"
+              style={{ width: '100%', height: '550px', border: 'none', borderRadius: '12px' }}
+              allowFullScreen
+            />
+            <h3 className="text-2xl font-bold text-gray-900 mt-6">Nike Jackects</h3>
+            <p className="text-gray-500 mt-2">Explore this products in 3D.</p>
+          </motion.div>
+
         </div>
       </div>
     </motion.section>
