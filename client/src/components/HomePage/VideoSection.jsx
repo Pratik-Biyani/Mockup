@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import nike from '../../assets/nike.mp4';
+import nike2 from '../../assets/nike2.mp4';
 
 const VideoSection = () => {
   return (
@@ -18,10 +19,10 @@ const VideoSection = () => {
           loop
           playsInline // Required for autoplay on mobile devices
           className="w-full h-full object-cover"
-          src={nike}
+          src={nike2}
           type="video/mp4"
         >
-          <source src={nike} type="video/mp4" />
+          <source src={nike2} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
