@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const Footer = () => {
   return (
     <motion.footer
-      className="bg-gray-900 text-white py-12 mt-20"
+      className="bg-black text-white py-12 mt-20"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
@@ -15,7 +15,7 @@ const Footer = () => {
           {/* About Section */}
           <div className="space-y-4">
             <h3 className="text-xl font-bold">About Us</h3>
-            <p className="text-gray-400">
+            <p className="text-gray-200">
               We are dedicated to providing the best sneakers with unmatched quality and style. Explore our collection and join the legacy.
             </p>
           </div>
