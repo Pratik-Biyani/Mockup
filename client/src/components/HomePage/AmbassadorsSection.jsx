@@ -71,7 +71,7 @@ const AmbassadorsSection = () => {
 
   return (
     <motion.section
-      className="py-20 w-screen bg-gradient-to-b from-gray-950 to-gray-900 text-white overflow-hidden"
+      className="py-20 w-screen bg-white text-black overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
@@ -86,7 +86,7 @@ const AmbassadorsSection = () => {
           Our Brand Ambassadors
         </motion.h2>
         <motion.p
-          className="text-gray-400 max-w-2xl mx-auto mb-12 text-center text-lg"
+          className="text-black max-w-2xl mx-auto mb-12 text-center text-lg"
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
@@ -101,8 +101,8 @@ const AmbassadorsSection = () => {
               key={ambassador.id}
               className={`p-4 rounded-lg cursor-pointer transition-all duration-300 ${
                 currentAmbassador === index
-                  ? 'bg-gradient-to-br from-blue-600 to-purple-600 shadow-lg'
-                  : 'bg-gray-800 hover:bg-gray-700'
+                  ? 'bg-black text-white shadow-lg'
+                  : 'bg-white text-black border border-black hover:bg-gray-100'
               }`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -110,10 +110,10 @@ const AmbassadorsSection = () => {
               onClick={() => handleAmbassadorChange(index)}
             >
               <div className="text-center">
-                <h3 className="text-xl font-semibold text-white mb-2">
+                <h3 className="text-xl font-semibold mb-2">
                   {ambassador.name}
                 </h3>
-                <p className="text-gray-300">{ambassador.role}</p>
+                <p className="">{ambassador.role}</p>
               </div>
             </motion.div>
           ))}
@@ -140,13 +140,13 @@ const AmbassadorsSection = () => {
           {/* Image Navigation Buttons */}
           <button
             onClick={() => handleImageChange('prev')}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800/50 p-3 rounded-full text-white hover:bg-gray-700/80 transition-all duration-300"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full text-black hover:bg-gray-100 transition-all duration-300 border border-black"
           >
             <FaChevronLeft size={24} />
           </button>
           <button
             onClick={() => handleImageChange('next')}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800/50 p-3 rounded-full text-white hover:bg-gray-700/80 transition-all duration-300"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full text-black hover:bg-gray-100 transition-all duration-300 border border-black"
           >
             <FaChevronRight size={24} />
           </button>
@@ -159,10 +159,10 @@ const AmbassadorsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          <h3 className="text-3xl font-bold text-white">
+          <h3 className="text-3xl font-bold">
             {ambassadors[currentAmbassador].name}
           </h3>
-          <p className="text-gray-300 text-lg mt-2">
+          <p className="text-black text-lg mt-2">
             {ambassadors[currentAmbassador].role}
           </p>
         </motion.div>

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import jordangif from '../../assets/GIF/jordan.gif';
 
-// Import your images or video for the background slideshow
+// Import your images for the background slideshow
 import bg1 from '../../assets/Shoes/Kids/img1.png';
 import bg2 from '../../assets/Shoes/Kids/img2.png';
 import bg3 from '../../assets/Shoes/Kids/img3.png';
@@ -43,7 +43,7 @@ const HeroSection = ({ sentences }) => {
       <div className="absolute inset-0 bg-black opacity-50 z-0"></div> {/* Dark overlay */}
       <div className="hero-content space-y-8 w-full z-10">
         <motion.div
-          className="inline-block bg-blue-600/70 px-6 py-2 rounded-full text-white text-xl font-semibold"
+          className="inline-block bg-black/20 px-6 py-2 rounded-full text-white text-xl font-semibold "
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.5, type: 'spring', stiffness: 100 }}
@@ -52,7 +52,8 @@ const HeroSection = ({ sentences }) => {
         </motion.div>
         
         <motion.h1
-          className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mt-4 max-w-xl mx-auto text-shadow-xl"
+          className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mt-4 max-w-xl mx-auto text-shadow-xl "
+          style={{ textShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)' }}
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.8 }}
@@ -71,14 +72,14 @@ const HeroSection = ({ sentences }) => {
 
         <div className="flex gap-8 justify-center mt-8">
           <motion.div
-            className="btn-primary bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full shadow-xl text-lg"
+            className="btn-primary bg-black hover:bg-gray-800 text-white px-10 py-4 rounded-full shadow-xl text-lg"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <Link to="/shop">Shop Now</Link>
           </motion.div>
           <motion.div
-            className="btn-secondary bg-white text-blue-600 border-2 border-blue-600 hover:bg-blue-50 px-10 py-4 rounded-full shadow-xl text-lg"
+            className="btn-secondary bg-white text-black border-2 border-black hover:bg-gray-100 px-10 py-4 rounded-full shadow-xl text-lg"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

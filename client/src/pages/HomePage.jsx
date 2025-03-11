@@ -12,6 +12,7 @@ import Footer from '../components/Footer';  // assuming Footer component exists
 import { motion } from 'framer-motion'; // Import Framer Motion
 import GIF from '../components/HomePage/GIF';
 import jordangif from '../assets/GIF/jordan.gif';
+import ProductSection from '../components/HomePage/productsection';
 
 
 
@@ -48,23 +49,14 @@ const HomePage = () => {
 
         {/* Quality Section */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
+
           viewport={{ once: true, amount: 0.5 }}
           variants={slideInVariants}
         >
-          <QualitySection />
+          <ProductSection />
         </motion.div>
 
-        {/* Ambassadors Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          variants={slideInVariants}
-        >
-          <AmbassadorsSection />
-        </motion.div>
+        
 
         {/* Model Section */}
         <motion.div
@@ -86,6 +78,16 @@ const HomePage = () => {
           <VideoSection />
         </motion.div>
 
+        {/* Ambassadors Section */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={slideInVariants}
+        >
+          <AmbassadorsSection />
+        </motion.div>
+
         {/* Testimonials Section */}
         <motion.div
           initial="hidden"
@@ -96,15 +98,7 @@ const HomePage = () => {
           <TestimonialsSection />
         </motion.div>
 
-        {/* Call to Action Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          variants={slideInVariants}
-        >
-          <CallToActionSection />
-        </motion.div>
+
       </div>
       <Footer />
     </div>
