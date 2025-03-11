@@ -88,7 +88,7 @@ const GIF = ({ gifSrc, duration = 4000, onEnd }) => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.5 }}
             >
-              <AnimatedText text="byNIKE" delay={1} />
+              <AnimatedText text="by NIKE" delay={1} />
             </motion.p>
           </motion.div>
         )}

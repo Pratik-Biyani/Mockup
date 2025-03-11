@@ -86,7 +86,7 @@ const AmbassadorsSection = () => {
         </motion.p>
 
         {/* Ambassador Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-8 ml-50">
+        <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-8 mb-8 ml-50">
           {ambassadors.map((ambassador, index) => (
             <motion.div
               key={ambassador.id}
@@ -111,7 +111,7 @@ const AmbassadorsSection = () => {
         </div>
 
         {/* Ambassador Slideshow */}
-        <div className="relative w-full max-w-6xl mx-auto">
+        <div className="relative w-full max-w-9xl ">
           {/* Image Slideshow */}
           <div className="w-full h-[500px] overflow-hidden rounded-lg relative">
             <AnimatePresence mode="wait">
@@ -119,7 +119,7 @@ const AmbassadorsSection = () => {
                 key={currentImageIndex}
                 src={ambassadors[currentAmbassador].images[currentImageIndex]}
                 alt={`${ambassadors[currentAmbassador].name} ${currentImageIndex + 1}`}
-                className="absolute w-full h-full object-cover rounded-lg"
+                className="absolute w-full h-full object-cover rounded-lg "
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 50 }}

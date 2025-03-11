@@ -27,7 +27,7 @@ const ModelSection = () => {
           Interact with our sneakers in 3D for an up-close look at every detail.
         </motion.p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-rows-1 sm:grid-rows-2 lg:grid-rows-2 gap-8">
           {/* Spline 3D Model */}
           <motion.div
             className="card bg-white p-6 shadow-lg rounded-xl hover:shadow-2xl transition-all duration-300 border border-gray-200"
