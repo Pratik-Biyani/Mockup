@@ -1,7 +1,8 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
-import { Code, Menu, X, User } from "lucide-react";
+import { Menu, X, User, ShoppingBag } from "lucide-react";
+import { motion } from 'framer-motion';
 import { useTheme } from '../context/themeContext';
 import { useUser } from '../context/userContext'; // Import the user context
 
@@ -15,11 +16,12 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/aboutus' },
-    { name: 'Courses', path: '/courses' },
-    { name: 'Recruitment', path: '/recruitment' },
-    { name: 'Hackathons', path: '/hackathons' },
-    { name: 'Community', path: '/community' },
+    { name: 'Shop', path: '/shop' },
+    { name: 'New Arrivals', path: '/new-arrivals' },
+    { name: 'Men', path: '/men' },
+    { name: 'Women', path: '/women' },
+    { name: 'Kids', path: '/kids' },
+    { name: 'Customize', path: '/customize' },
   ];
 
   // Handle scroll event to add/remove background styling
@@ -53,139 +55,224 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-    <nav className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-gray-900/90 backdrop-blur-md py-4 shadow-lg' : 'bg-transparent py-4'}`}>
+    <motion.nav
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white backdrop-blur-md py-4 shadow-lg' : 'bg-white py-4'}`}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 4, ease: 'easeOut', delay: 0.5 }}
+    >
       <div className="container mx-auto px-4 flex justify-between items-center">
+        {/* Brand Logo */}
         <Link to="/" className="flex items-center space-x-2">
-          <Code className="h-8 w-8 text-green-500" />
-          <span className="text-xl font-bold gradient-text">CodeNexus</span>
+          <motion.img
+            src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg"
+            alt="Nike Logo"
+            className="h-8 w-8"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          />
+          <motion.span
+            className="text-xl font-bold text-black"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Nike Jordans
+          </motion.span>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-5 ml-30">
+        <div className="hidden md:flex space-x-8 items-center">
           {navLinks.map((link) => (
-            <Link
+            <motion.div
               key={link.path}
-              to={link.path}
-              className={`nav-link ${location.pathname === link.path ? 'text-green-400' : ''}`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              {link.name}
-            </Link>
+              <Link
+                to={link.path}
+                className={`nav-link ${location.pathname === link.path ? 'text-black font-semibold' : 'text-gray-600 hover:text-black'}`}
+              >
+                {link.name}
+              </Link>
+            </motion.div>
           ))}
+
+          {/* Shopping Cart */}
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <Link to="/cart" className="text-gray-600 hover:text-black">
+              <ShoppingBag className="h-6 w-6" />
+            </Link>
+          </motion.div>
 
           {/* Profile Dropdown */}
           {user ? (
             <div className="relative">
-              <button
+              <motion.button
                 onClick={() => setProfileMenuOpen(!profileMenuOpen)}
-                className="flex items-center space-x-2 text-gray-300 hover:text-green-400"
+                className="flex items-center space-x-2 text-gray-600 hover:text-black"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <User className="h-6 w-6" />
                 <span>{user.name}</span>
-              </button>
+              </motion.button>
 
               {/* Profile Dropdown Menu */}
               {profileMenuOpen && (
-                <div className="absolute right-0 mt-2 bg-gray-800 text-white rounded-lg shadow-lg w-40">
+                <motion.div
+                  className="absolute right-0 mt-2 bg-white text-black rounded-lg shadow-lg w-48 border border-gray-200"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
                   <Link
-                    to="/user-dashboard"
-                    className="block px-4 py-2 text-sm hover:bg-gray-700"
+                    to="/profile"
+                    className="block px-4 py-2 text-sm hover:bg-gray-100"
                   >
-                    User Dashboard
+                    Profile
                   </Link>
                   <button
                     onClick={() => { logout(); setProfileMenuOpen(false); }}
-                    className="w-full text-left px-4 py-2 text-sm hover:bg-gray-700"
+                    className="w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
                   >
                     Logout
                   </button>
                   <button
                     onClick={toggleTheme}
-                    className="w-full text-left px-4 py-2 text-sm hover:bg-gray-700"
+                    className="w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
                   >
                     Switch to {theme === 'light' ? 'Dark' : 'Light'} Mode
                   </button>
-                </div>
+                </motion.div>
               )}
             </div>
           ) : (
-            <Link
-              to="/login"
-              className="text-gray-300 hover:text-green-400"
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              Login
-            </Link>
+              <Link
+                to="/login"
+                className="text-gray-600 hover:text-black"
+              >
+                Login
+              </Link>
+            </motion.div>
           )}
         </div>
 
         {/* Mobile Navigation Toggle */}
-        <button
-          className="md:hidden text-gray-200 focus:outline-none"
+        <motion.button
+          className="md:hidden text-black focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        </motion.button>
       </div>
 
       {/* Mobile Navigation Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-gray-900/95 backdrop-blur-md border-t border-gray-800 py-4 shadow-lg">
+        <motion.div
+          className="md:hidden absolute top-full left-0 w-full bg-white backdrop-blur-md border-t border-gray-200 py-4 shadow-lg"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
           <div className="container mx-auto px-4 flex flex-col space-y-3">
             {navLinks.map((link) => (
-              <Link
+              <motion.div
                 key={link.path}
-                to={link.path}
-                className={`mobile-nav-link block py-2 px-4 rounded-md ${location.pathname === link.path ? 'bg-gray-800 text-green-400' : 'text-gray-300 hover:bg-gray-800 hover:text-green-400'} transition-colors duration-200`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                {link.name}
-              </Link>
+                <Link
+                  to={link.path}
+                  className={`mobile-nav-link block py-2 px-4 rounded-md ${location.pathname === link.path ? 'bg-gray-100 text-black font-semibold' : 'text-gray-600 hover:bg-gray-100 hover:text-black'} transition-colors duration-200`}
+                >
+                  {link.name}
+                </Link>
+              </motion.div>
             ))}
+
+            {/* Shopping Cart */}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link
+                to="/cart"
+                className="mobile-nav-link block py-2 px-4 text-gray-600 hover:bg-gray-100 hover:text-black"
+              >
+                Cart
+              </Link>
+            </motion.div>
 
             {/* Login/Logout or Profile */}
             {user ? (
               <div className="relative">
-                <button
+                <motion.button
                   onClick={() => setProfileMenuOpen(!profileMenuOpen)}
-                  className="block py-2 px-4 text-gray-300 hover:bg-gray-800 hover:text-green-400 w-full text-left"
+                  className="block py-2 px-4 text-gray-600 hover:bg-gray-100 hover:text-black w-full text-left"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   Profile
-                </button>
+                </motion.button>
 
                 {profileMenuOpen && (
-                  <div className="absolute left-0 mt-2 bg-gray-800 text-white rounded-lg shadow-lg w-full">
+                  <motion.div
+                    className="absolute left-0 mt-2 bg-white text-black rounded-lg shadow-lg w-full border border-gray-200"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <Link
-                      to="/user-dashboard"
-                      className="block px-4 py-2 text-sm hover:bg-gray-700"
+                      to="/profile"
+                      className="block px-4 py-2 text-sm hover:bg-gray-100"
                     >
-                      User Dashboard
+                      Profile
                     </Link>
                     <button
                       onClick={() => { logout(); setProfileMenuOpen(false); }}
-                      className="w-full text-left px-4 py-2 text-sm hover:bg-gray-700"
+                      className="w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
                     >
                       Logout
                     </button>
-                  </div>
+                  </motion.div>
                 )}
               </div>
             ) : (
-              <Link
-                to="/login"
-                className="mobile-nav-link block py-2 px-4 mt-2 bg-green-600 hover:bg-green-500 text-white rounded-md transition-colors duration-200"
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                Login
-              </Link>
+                <Link
+                  to="/login"
+                  className="mobile-nav-link block py-2 px-4 mt-2 bg-black hover:bg-gray-800 text-white rounded-md transition-colors duration-200"
+                >
+                  Login
+                </Link>
+              </motion.div>
             )}
 
-            <button
+            {/* Theme Toggle */}
+            <motion.button
               onClick={toggleTheme}
-              className="w-full text-left px-4 py-2 text-sm hover:bg-gray-700"
+              className="w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               Switch to {theme === 'light' ? 'Dark' : 'Light'} Mode
-            </button>
+            </motion.button>
           </div>
-        </div>
+        </motion.div>
       )}
-    </nav>
+    </motion.nav>
   );
 };
 

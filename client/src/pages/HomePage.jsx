@@ -1,18 +1,113 @@
 import React from 'react';
 import { useTheme } from '../context/themeContext';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import HeroSection from '../components/HomePage/HeroSection';
+import QualitySection from '../components/HomePage/QualitySection';
+import AmbassadorsSection from '../components/HomePage/AmbassadorsSection';
+import ModelSection from '../components/HomePage/ModelSection';
+import VideoSection from '../components/HomePage/VideoSection';
+import TestimonialsSection from '../components/HomePage/TestimonialsSection';
+import CallToActionSection from '../components/HomePage/CallToActionSection';
+import Navbar from '../components/Navbar';  // assuming Navbar component exists
+import Footer from '../components/Footer';  // assuming Footer component exists
+import { motion } from 'framer-motion'; // Import Framer Motion
+import GIF from '../components/HomePage/GIF';
+import jordangif from '../assets/GIF/jordan.gif';
+
+
 
 const HomePage = () => {
-  const { theme, toggleTheme } = useTheme(); 
+  const { isDarkMode } = useTheme();
+
+  const sentences = [
+    { badge: "Nike Air Jordans", header: "Iconic Sneakers for Legends" },
+    { badge: "Premium Quality", header: "Crafted for Performance" },
+    { badge: "Style Meets Comfort", header: "Comfort and Fashion in One" },
+  ];
+
+  // Animation variants for sliding in from the left
+  const slideInVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+  };
+
   return (
     <>
-    <Navbar />
-      <div className={`${theme === 'light' ? 'bg-white text-black' : 'bg-gray-900 text-white'} min-h-screen`}>
-      <h1 className="text-4xl font-bold">Welcome to the Home Page</h1>
-      <p>The current theme is {theme}.</p>
+    <GIF gifSrc={jordangif} />
+      <div className={`min-h-screen ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
+      <Navbar />
+      <div className="container">
+        {/* Hero Section */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={slideInVariants}
+        >
+          <HeroSection sentences={sentences} />
+        </motion.div>
+
+        {/* Quality Section */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={slideInVariants}
+        >
+          <QualitySection />
+        </motion.div>
+
+        {/* Ambassadors Section */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={slideInVariants}
+        >
+          <AmbassadorsSection />
+        </motion.div>
+
+        {/* Model Section */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={slideInVariants}
+        >
+          <ModelSection />
+        </motion.div>
+
+        {/* Video Section */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={slideInVariants}
+        >
+          <VideoSection />
+        </motion.div>
+
+        {/* Testimonials Section */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={slideInVariants}
+        >
+          <TestimonialsSection />
+        </motion.div>
+
+        {/* Call to Action Section */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={slideInVariants}
+        >
+          <CallToActionSection />
+        </motion.div>
+      </div>
+      <Footer />
     </div>
-    <Footer/>
     </>
   );
 };
